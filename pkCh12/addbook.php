@@ -1,10 +1,6 @@
+
+<?php include 'conn.php';?>
 <?php
-$hostname = "localhost";
-$username = "root";
-$password = "12345";
-$dbname = "testimport";
-$conn = mysqli_connect( $hostname, $username, $password, $dbname);
-mysqli_set_charset($conn,"utf8");
 // ฟังก์ชนเลือกประเภท ั่
 function GetTypeSelect($ID)
 {
@@ -59,7 +55,7 @@ echo "$result->StatusName</option>\n";
 
 <body>
 
-    <form enctype="multipart/form-data" name="save" method="POST" action="savebook.php">
+    <form enctype="multipart/form-data" name="save" method="POST" action="savebook2.php">
 
         <BR><BR>
         <table width="650" border="1" bgcolor="#FFFFFF" align="center">

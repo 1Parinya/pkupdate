@@ -1,13 +1,10 @@
+<?php include 'conn.php';?>
 <?php
     session_start();
     $message = "";
-    $hostname = "localhost";
-    $username = "root" ;
-    $password = "12345";
-    $dbname= "testimport";
 
     if(count($_POST)>0){
-        $con = new mysqli($hostname, $username, $password ,$dbname);
+        $conn = new mysqli($hostname, $username, $password ,$dbname);
         $result = mysqli_query($conn,"SELECT * FROM login_user
         WHERE userName ='". $_POST["userName"]  . "'
         and password = '" . $_POST["passWord"]."'");
@@ -21,7 +18,7 @@
         }
     }
     if (isset($_SESSION["id"])) {
-        header("Localtion:lisofbook2.php");
+        header("Localtion:listofbook2.php");
     }
 
 ?>

@@ -2,13 +2,8 @@
 <HTML>
 <HEAD><TITLE>Show Data Book</TITLE></HEAD>
 <BODY>
+<?php include 'conn.php';?>
 <?php
-$hostname = "localhost";
-$username = "root";
-$password = "12345";
-$dbname = "testimport";
-$conn = mysqli_connect( $hostname, $username, $password, $dbname);
-mysqli_set_charset($conn,"utf8");
 $id = $_GET['id'];
 $sql = "SELECT * FROM book 
         INNER JOIN statusbook ON book.statusID = statusbook.statusID
@@ -35,6 +30,6 @@ echo "<tr><td> วันที่จัดเก็บหนังสือ :
 </td><td>".$data["BookDate"]."</td></tr></table>";
 ?>
 <br>
-<div align = "center"> <A HREF="listofbook.php">กลับหน้าหลัก</A></div><BR>
+<div align = "center"> <A HREF="listofbook2.php">กลับหน้าหลัก</A></div><BR>
 </BODY>
 </HTML>

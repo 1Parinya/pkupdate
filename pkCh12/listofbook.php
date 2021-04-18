@@ -5,21 +5,16 @@
 <meta charset="utf-8">
 </head>
 <body>
+<?php include 'conn.php';?>
 <?php
-$hostname = "localhost";
-$username = "root";
-$password = "12345";
-$dbname = "testimport";
-$conn = mysqli_connect( $hostname, $username, $password, $dbname);
-if ( ! $conn ) die ( "ไม่สามารถติดต่อกับ MySQL ได้" );
-mysqli_set_charset($conn,"utf8");
+
 $sqltxt = mysqli_query($conn,"SELECT * FROM book order by BookID")
 or die (mysqli_error($conn));
 echo "<CENTER><H3>รายชื่อหนังสือ</H3></CENTER>";
 echo "<table width=\"400\" border=\"0\" bordercolor=\"D1D7DA\" ";
 echo "align = \"center\" valign = \"top\" >";
 echo " <br><b><tr align=\"center\" bgcolor=\"#0099CC\">";
-echo "<td width =\"30\" align=\"center\">ล าดับ</font></td>";
+echo "<td width =\"30\" align=\"center\">ลำดับ</font></td>";
 echo "<td width =\"100\" align=\"center\" >รหัสหนังสือ</td>";
 echo "<td align=\"center\" width = \"200\">ชื่อหนังสือ</td>";
 echo "<td align=\"center\" width =\"80\" >ลบ</a></font></td>\n</b>";

@@ -1,10 +1,6 @@
+
+<?php include 'conn.php';?>
 <?php
-$hostname = "localhost";
-$username = "root";
-$password = "12345";
-$dbname = "testimport";
-$conn = mysqli_connect( $hostname, $username, $password, $dbname);
-mysqli_set_charset($conn,"utf8");
 $BookID=$_POST['BookID'];
 $BookName=$_POST['BookName'];
 $TypeID=$_POST['TypeID'];
@@ -54,7 +50,7 @@ VALUES
 '$UnitPrice','$UnitRent','$DayAmount','$image','$BDate')")
 or die (mysqli_error($conn));
 echo "<br><br><CENTER><H2>บันทึกข้อมูลเรียบร้อย</H2><BR><BR></CENTER>";
-echo "<CENTER><A HREF=\"listofbook.php\">แสดงขอ้ มูลท้งัหมด</A></CENTER>";
+echo "<CENTER><A HREF=\"listofbook.php\">แสดงข้อ มูลท้งัหมด</A></CENTER>";
 }
 mysqli_close($conn);
 ?>
